@@ -6,6 +6,7 @@ GlobalState.pBrMeta = {
     state = false,
     cPos = { false, false },
 }
+GlobalState.pBrCooldown = false
 
 local duration = config.bridgeSettings.movementDuration
 local function moveEntity(currentState)
@@ -53,8 +54,12 @@ end
 
 local function openBridges()
     local currentState = GlobalState.pBrMeta.state
-    if not currentState then
+    if not currentState or not GlobalState.pBrCooldown then
+        GlobalState.pBrCooldown = true
         moveEntity(currentState)
+        SetTimeout(config.bridgeSettings.cooldown, function()
+            GlobalState.pBrCooldown = false
+        end)
     end
 end
 

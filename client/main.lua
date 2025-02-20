@@ -136,7 +136,16 @@ local function createInteraction()
                     return not GlobalState.pBrMeta.state
                 end,
                 onSelect = function()
+                    if GlobalState.pBrCooldown then
+                        lib.notify({
+                            title = 'Port Bridge',
+                            description = 'The bridge is currently on cooldown',
+                            type = 'error'
+                        })
+                        return
+                    end
                     if config.minigame() then
+                        
                         TriggerServerEvent('smoke_drawbridge:server:hackBridge')
                     end
                 end
@@ -152,6 +161,14 @@ local function createInteraction()
             print('Nearby')
             lib.showTextUI('[E] - Hack Module')
             if IsControlJustPressed(0, 38) then
+                if GlobalState.pBrCooldown then
+                    lib.notify({
+                        title = 'Port Bridge',
+                        description = 'The bridge is currently on cooldown',
+                        type = 'error'
+                    })
+                    return
+                end
                 if config.minigame() then
                     TriggerServerEvent('smoke_drawbridge:server:hackBridge')
                 end
