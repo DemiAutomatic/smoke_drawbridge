@@ -18,8 +18,7 @@ Not much hassle, just drag and drop into your server's resources folder.
 ## Support
 Need help or want to chat? Join our community on Discord: 
 
-[![Discord Banner 2](https://discord.com/api/guilds/1166449313824653393/widget.png?style=banner2)](https://discord.gg/HDvgpMEKjX)
-
+[![Discord Banner 2](https://discord.com/api/guilds/1166449313824653393/widget.png?style=banner3)](https://discord.gg/HDvgpMEKjX)
 
 ## Credits
 This mod uses bridge mods by PNWParksFan. Please support at [ParksMods Donation Page](https://parksmods.com/donate/).
