@@ -107,5 +107,6 @@ if config.enableCommands then
     end)
 end
 
+lib.versionCheck('BigSmoKe07/smoke_drawbridge')
 -- Exports 
 exports('openPortBridges', openBridges)
