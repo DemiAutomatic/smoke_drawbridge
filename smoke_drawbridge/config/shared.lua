@@ -3,22 +3,24 @@ return {
         {
             hash = `car_drawbridge`,
             normalState = vec3(353.3317, -2315.838, 13.75),
-            openState = vec3(353.3317, -2315.838, 42.00)
+            openState = vec3(353.3317, -2315.838, 42.00),
+            movementDuration = 1000,
+            blockAreas = {
+                {
+                    coords = vec3(347.7381, -2273.5859, 10.1941), -- 353.3167, -2316.1406, 10.2630,
+                    size = 10.0,
+                },
+                {
+                    coords = vec3(358.786, -2352.276, 10.186),
+                    size = 10.0,
+                }
+            },
         },
         {
             hash = `train_drawbridge`,
             normalState = vec3(219.5085, -2319.432, 13.25),
-            openState = vec3(219.5085, -2319.432, 42.00)
-        }
-    },
-    blockArea = {
-        {
-            coords = vec3(347.7381, -2273.5859, 10.1941), -- 353.3167, -2316.1406, 10.2630,
-            size = 10.0,
-        },
-        {
-            coords = vec3(358.786, -2352.276, 10.186),
-            size = 10.0,
+            openState = vec3(219.5085, -2319.432, 42.00),
+            movementDuration = 1000,
         }
     },
     --- Enables players to hack the bridge
@@ -31,42 +33,34 @@ return {
         model = `prop_elecbox_01a`,
         cooldown = 60 * 60000, -- 60 minutes
         minigame = function ()
-            return true            
+            return true
         end
     },
     barrierGates = {
         {
             model = `prop_bridge_barrier_gate_01x`,
             coords = vec3(364.69, -2343.68, 11.39),
-            normalRot = vec3(0.0, 0.0, 0.0),
-            minRotationY = 0,
-            maxRotationY = -90,
-            rotationX = 180
+            closed = vec3(0.0, 0.0, 0.0),
+            open =  vec3(0.0, -90.0, 0.0),
         },
         {
             model = `prop_bridge_barrier_gate_01x`,
             coords = vec3(342.04, -2343.55, 11.46),
-            normalRot = vec3(0.0, 0.0, 180.0),
-            minRotationY = 0,
-            maxRotationY = 90,
-            rotationX = 0
+            closed = vec3(0.0, 0.0, 180.0),
+            open =  vec3(0.0, 90.0, 0.0),
         },
 
         {
             model = `prop_bridge_barrier_gate_01x`,
             coords = vec3(364.71, -2288.3, 11.36),
-            normalRot = vec3(0.0, 0.0, 0.0),
-            minRotationY = 0,
-            maxRotationY = -90,
-            rotationX = 0
+            closed = vec3(0.0, 0.0, 0.0),
+            open =  vec3(0.0, -90.0, 0.0),
         },
         {
             model = `prop_bridge_barrier_gate_01x`,
             coords = vec3(342.11, -2288.01, 11.30),
-            normalRot = vec3(0.0, 0.0, 180.0),
-            minRotationY = 0,
-            maxRotationY = 90,
-            rotationX = -180
+            closed = vec3(0.0, 0.0, 180.0),
+            open =  vec3(0.0, 90.0, 0.0),
         }
     }
 }
